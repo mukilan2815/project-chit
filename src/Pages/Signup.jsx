@@ -4,9 +4,9 @@ import { FaGoogle, FaFacebook } from "react-icons/fa";
 const Signup = () => {
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
-      <div className="hidden md:flex md:w-1/2 h-full bg-blue-200/20">
+      <div className="hidden md:flex md:w-1/2 h-full p-5 bg-blue-200/20">
         <img
-          src="https://moneycircle.ca/wp-content/uploads/2022/09/sb-banner.svg"
+          src="https://finocent.com/wp-content/uploads/2021/07/why-finocent.svg"
           alt="Decorative Banner"
           className="w-full h-full object-contain pt-20"
         />
@@ -18,7 +18,7 @@ const Signup = () => {
           </h1>
           <p className="text-md text-gray-600 mb-6">Your Admin Dashboard</p>
 
-          <p className="text-4xl sm:hidden md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
+          <p className="text-4xl hidden md:block md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
             <span className="text-red-500">💰</span> Chit Fund
           </p>
 
