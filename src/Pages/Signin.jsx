@@ -9,7 +9,7 @@ const LoginForm = () => {
         <img
           src="https://moneycircle.ca/wp-content/uploads/2022/09/sb-banner.svg"
           alt="Decorative Banner"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover pt-20"
         />
       </div>
 
@@ -20,7 +20,9 @@ const LoginForm = () => {
             Welcome to ChitFund
           </h1>
           <p className="text-md text-gray-600 mb-6">Your Admin Dashboard</p>
-
+          <p className="text-4xl sm:bg-blue-300 md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
+            <span className="text-red-500">💰</span> Chit Fund
+          </p>
           <div className="flex flex-col md:flex-row md:space-x-4 mb-6">
             <button className="flex items-center justify-center py-2 px-4 mb-2 md:mb-0 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50">
               <FaGoogle className="mr-2 text-red-500" />
@@ -51,20 +53,7 @@ const LoginForm = () => {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
-            <div className="mb-4">
-              <label
-                htmlFor="username"
-                className="block font-bold text-md text-gray-700 mb-1"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md"
-              />
-            </div>
+
             <div className="mb-6">
               <label
                 htmlFor="password"
