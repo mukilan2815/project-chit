@@ -41,9 +41,9 @@ const SignupForm = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="m-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row w-full md:w-[1000px] h-auto md:h-[600px]"
+        className="m-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row w-full lg:w-[1000px] h-auto lg:h-[600px]"
       >
-        <div className="w-full md:w-1/2 p-8 relative">
+        <div className="w-full lg:w-1/2 p-8 relative">
           <div className="absolute top-4 left-4 z-20">
             <h2 className="text-white text-2xl font-bold">CHIT FUND</h2>
           </div>
@@ -92,31 +92,33 @@ const SignupForm = () => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 p-8 bg-gray-900">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center md:text-left">
-            Create an account
-          </h2>
-          <p className="text-gray-400 mb-8 text-center md:text-left">
+        <div className="w-full lg:w-1/2 p-8 bg-gray-900">
+          <a href="/user">
+            <h2 className="text-3xl font-bold text-white mb-6 text-center lg:text-left">
+              Create an account
+            </h2>
+          </a>
+          <p className="text-gray-400 mb-8 text-center lg:text-left">
             Already have an account?{" "}
             <a href="/signin" className="text-purple-500 hover:underline">
               Log in
             </a>
           </p>
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col md:flex-row mb-4">
+            <div className="flex flex-col lg:flex-row mb-4">
               <input
                 type="text"
                 placeholder="First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="w-full md:w-1/2 md:mr-2 mb-4 md:mb-0 px-5 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-600 transition duration-300"
+                className="w-full lg:w-1/2 lg:mr-2 mb-4 lg:mb-0 px-5 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-600 transition duration-300"
               />
               <input
                 type="text"
                 placeholder="Last name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="w-full md:w-1/2 md:ml-2 px-5 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-600 transition duration-300"
+                className="w-full lg:w-1/2 lg:ml-2 px-5 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-600 transition duration-300"
               />
             </div>
             <input
