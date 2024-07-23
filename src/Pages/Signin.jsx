@@ -1,98 +1,101 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
 
 const LoginForm = () => {
-  const [emailOrUsername, setEmailOrUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/user");
-  };
-
   return (
-    <div className="flex h-screen bg-gray-700">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="m-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row w-full md:w-[1000px] h-auto md:h-[600px]"
-      >
-        <div className="w-full md:w-1/2 p-8 relative">
-          <div className="absolute top-4 left-4 z-20">
-            <h2 className="text-white text-2xl font-bold">CHIT FUND</h2>
-          </div>
-          <div className="absolute top-4 right-4 z-20">
-            <button className="text-white text-sm hover:bg-gray-600 bg-gray-500 rounded-lg px-2 py-1 transition duration-300">
-              Back to website →
+    <div className="flex flex-col md:flex-row w-full min-h-screen">
+      {/* Image Section */}
+      <div className="hidden md:flex md:w-1/2 h-full bg-blue-200/20">
+        <img
+          src="https://moneycircle.ca/wp-content/uploads/2022/09/sb-banner.svg"
+          alt="Decorative Banner"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Form Section */}
+      <div className="w-full md:w-1/2 flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-white p-6 rounded-lg">
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            Welcome to ChitFund
+          </h1>
+          <p className="text-md text-gray-600 mb-6">Your Admin Dashboard</p>
+
+          <div className="flex flex-col md:flex-row md:space-x-4 mb-6">
+            <button className="flex items-center justify-center py-2 px-4 mb-2 md:mb-0 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50">
+              <FaGoogle className="mr-2 text-red-500" />
+              Sign in with Google
+            </button>
+            <button className="flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50">
+              <FaFacebook className="mr-2 text-blue-600" />
+              Sign in with FB
             </button>
           </div>
-          <div className="relative w-full h-full">
-            <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
-            <img
-              src="https://img.freepik.com/free-photo/plant-growing-coins-glass-jar_155003-1174.jpg?w=360&t=st=1721660919~exp=1721661519~hmac=4c74f690bb5d271358dc00585992b5c02ee186860165c0fc6fb5f54453e10cc4"
-              alt="Background"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 p-8 bg-gray-900">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center md:text-left">
-            Login to Your Account
-          </h2>
-          <p className="text-gray-400 mb-8 text-center md:text-left">
-            Don't have an account?{" "}
-            <a href="/" className="text-purple-500 hover:underline">
-              Sign up
-            </a>
+
+          <p className="text-center text-md text-gray-600 mb-6">
+            or sign in with
           </p>
-          <form onSubmit={handleSubmit}>
+
+          <form>
             <div className="mb-4">
+              <label
+                htmlFor="username"
+                className="block font-bold text-md text-gray-700 mb-1"
+              >
+                Username
+              </label>
               <input
                 type="text"
-                placeholder="Username or Email"
-                value={emailOrUsername}
-                onChange={(e) => setEmailOrUsername(e.target.value)}
-                className="w-full px-5 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-600 transition duration-300"
+                id="username"
+                name="username"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
-            <div className="relative mb-6">
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-5 py-3 bg-gray-800 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-600 transition duration-300"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-2 top-2 text-gray-400 hover:text-white transition duration-300"
+            <div className="mb-4">
+              <label
+                htmlFor="username"
+                className="block font-bold text-md text-gray-700 mb-1"
               >
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-              </button>
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              />
             </div>
-            <div className="flex justify-between items-center mb-6">
-              <a href="#" className="text-gray-400 hover:underline">
-                Forgot Password?
-              </a>
+            <div className="mb-6">
+              <label
+                htmlFor="password"
+                className="block text-md font-bold text-gray-700 mb-1"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+              />
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+
+            <button
               type="submit"
-              className="w-full bg-purple-600 text-white p-2 rounded mb-4 transition duration-300 hover:bg-purple-700"
+              className="w-full py-2 px-4 border border-transparent rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              Login
-            </motion.button>
+              Sign In
+            </button>
           </form>
+
+          <p className="mt-6 text-center text-sm text-gray-600">
+            New to ChitFund?{" "}
+            <a href="/" className="text-blue-600 hover:underline">
+              Create an account
+            </a>
+          </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
