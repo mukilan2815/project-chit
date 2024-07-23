@@ -20,7 +20,7 @@ const LoginForm = () => {
             Welcome to ChitFund
           </h1>
           <p className="text-md text-gray-600 mb-6">Your Admin Dashboard</p>
-          <p className="text-4xl sm:bg-blue-300 md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
+          <p className="text-4xl sm:hidden md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
             <span className="text-red-500">💰</span> Chit Fund
           </p>
           <div className="flex flex-col md:flex-row md:space-x-4 mb-6">
