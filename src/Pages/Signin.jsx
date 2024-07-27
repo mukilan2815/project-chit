@@ -1,7 +1,7 @@
 import React from "react";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
       {/* Image Section */}
@@ -19,23 +19,9 @@ const LoginForm = () => {
           <h1 className="text-3xl font-bold text-gray-800 mb-4">
             Welcome to ChitFund
           </h1>
-          <p className="text-md text-gray-600 mb-6">Your Admin Dashboard</p>
+          <p className="text-md text-gray-600 mb-6">Your Chitfund</p>
           <p className="text-4xl sm:hidden md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
             <span className="text-red-500">💰</span> Chit Fund
-          </p>
-          <div className="flex flex-col md:flex-row md:space-x-4 mb-6">
-            <button className="flex items-center justify-center py-2 px-4 mb-2 md:mb-0 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50">
-              <FaGoogle className="mr-2 text-red-500" />
-              Sign in with Google
-            </button>
-            <button className="flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50">
-              <FaFacebook className="mr-2 text-blue-600" />
-              Sign in with FB
-            </button>
-          </div>
-
-          <p className="text-center text-md text-gray-600 mb-6">
-            or sign in with
           </p>
 
           <form>
@@ -70,7 +56,9 @@ const LoginForm = () => {
             </div>
 
             <button
-              type="submit"
+              onClick={() => {
+                navigate("/user");
+              }}
               className="w-full py-2 px-4 border border-transparent rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Sign In
