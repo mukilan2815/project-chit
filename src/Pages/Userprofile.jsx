@@ -22,7 +22,7 @@ const User = () => {
     { value: "individual", label: "Individual" },
     { value: "firm", label: "Firm" },
   ];
-  const [selectedOption, setSelectedOption] = useState("individual");
+  const [selectedOption, setSelectedOption] = useState(options[0]);
   const [profileImage, setProfileImage] = useState(
     "https://via.placeholder.com/150"
   );
