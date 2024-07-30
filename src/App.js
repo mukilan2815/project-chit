@@ -4,6 +4,7 @@ import Signup from "./Pages/Signup";
 import Signin from "./Pages/Signin";
 import User from "./Pages/Userprofile";
 import TermsAndConditions from "./Pages/TermsandConditions";
+import Ownerdashboard from "./Pages/Ownerdashboard";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/user" element={<User />} />
         <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/ownerdashboard" element={<Ownerdashboard />} />
       </Routes>
     </Router>
   );
